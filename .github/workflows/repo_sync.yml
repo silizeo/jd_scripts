@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-z115870-scripts
+name: sync-z115870-jd_scripts
 on:
   schedule:
     - cron: '1 0,15 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-z115870-scripts
+    types: sync-z115870-jd_scripts
 jobs:
   repo-sync:
     env:
@@ -20,11 +20,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync z115870-scripts
+      - name: sync z115870-jd_scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/z11587/jd_scripts.git"
+          source_repo: "https://github.com/z115870/jd_scripts.git"
           source_branch: "master"
           destination_branch: "master"
           github_token: ${{ secrets.PAT }}
