@@ -33,8 +33,8 @@ jobs:
         uses: Yikun/hub-mirror-action@master
         if: env.dst_key
         with:
-          src: github/z115870
-          dst: gitee/z115870
+          src: github/silizeo
+          dst: gitee/silizeo
           static_list: "jd_scripts"
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
